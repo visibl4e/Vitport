@@ -1,0 +1,24 @@
+@import "./fonts-colors/allColors";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: $navy;
+  font-family: "Roboto", sans-serif;
+  --load-time0: 0ms;
+  --load-time1: 100ms;
+  --load-time2: 200ms;
+  --load-time3: 300ms;
+  --load-time4: 400ms;
+  --load-time5: 500ms;
+  --load-time6: 600ms;
+  --load-time6: 700ms;
+  --load-time6: 800ms;
+  --load-time6: 900ms;
+}

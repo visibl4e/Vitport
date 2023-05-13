@@ -1,0 +1,68 @@
+.mail-StyledMailSection {
+  max-width: 600px;
+  margin: 0px auto 100px;
+  text-align: center;
+  .numbered-heading {
+    color: $MediumSlateBlue;
+    font-size: $text-base16;
+    margin: 10px 0 30px;
+    font-weight: $fw700;
+  }
+  .numbered-heading::before {
+    position: relative;
+    counter-increment: section 4;
+    content: "0" counter(section) ".";
+    margin-right: 10px;
+    color: $MediumSlateBlue;
+    font-size: $text-base16;
+    font-weight: $fw700;
+  }
+  h2 {
+    font-size: $text-5xl56;
+    color: $lightSlate;
+    margin-bottom: 30px;
+  }
+  p {
+    color: $slate;
+    line-height: 1.5;
+    margin-bottom: 60px;
+  }
+  a {
+    position: relative;
+    text-decoration: none;
+    color: $MediumSlateBlue;
+    border: 2px solid $MediumSlateBlue;
+    padding: 1.25rem 1.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  a::before {
+    @include hover-btn;
+  }
+  a:hover::before {
+    background-color: $lightest-navy;
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+// footer
+
+.footer-StyledFooter {
+  max-width: 600px;
+  margin: 0px auto 20px;
+  text-align: center;
+  margin-top: 80px;
+  a {
+    text-decoration: none;
+    color: $slate;
+    font-size: $text-sm14;
+    font-weight: $fw500;
+    padding: 10px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+  }
+  a:hover {
+    color: $MediumSlateBlue;
+    transition: all 0.25s;
+  }
+}

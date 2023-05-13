@@ -1,0 +1,148 @@
+@import "../mixins/mixin";
+
+.archive-StyledArchiveSection {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px auto;
+  padding: 0px;
+  padding-bottom: 100px;
+  max-width: 1000px;
+  h2 {
+    color: $lightSlate;
+    font-size: $text-2xl24;
+    font-weight: $fw700;
+  }
+  .archive-grid {
+    list-style: none;
+    padding: 0px;
+    margin: 50px 0px 0px;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    gap: 15px;
+
+    // position: relative;
+    .archive-li {
+      position: relative;
+      background-color: $lightest-navy;
+      border-radius: 5px;
+      color: $slate;
+      height: 300px;
+      align-items: center;
+      list-style-type: none;
+      .archive-inner {
+        padding: 20px;
+        text-align: center;
+        .project-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 30px;
+          margin-top: 10px;
+          .project-link {
+            display: flex;
+            align-items: center;
+            z-index: 2;
+            svg {
+              cursor: pointer;
+              color: $slate;
+              width: 24px;
+              height: 24px;
+            }
+            svg:hover {
+              color: $MediumSlateBlue;
+            }
+          }
+          .folder-icon {
+            svg {
+              color: $MediumSlateBlue;
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+        h3 {
+          text-align: left;
+          margin-bottom: 15px;
+          a {
+            position: static;
+            color: $lightSlate;
+            text-decoration: none;
+          }
+          a::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        .about {
+          text-align: left;
+          line-height: 1.3;
+          font-size: $text-sm14;
+          font-weight: $fw500;
+          margin-bottom: 25px;
+        }
+        .tech-list {
+          display: flex;
+          list-style: none;
+          font-size: $text-xs12;
+          gap: 10px;
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+
+          li::before {
+            content: "▹";
+            margin-right: 5px;
+            left: 0px;
+            color: $Aquamarine;
+            font-size: $text-xs12;
+            line-height: 12px;
+          }
+        }
+      }
+    }
+    .archive-li:hover {
+      transform: translate3d(0px, -7px, 0px);
+      transition: transform 0.2s ease-in;
+
+      cursor: pointer;
+      h3 {
+        a {
+          color: $MediumSlateBlue;
+          transition: all 0.2s;
+        }
+      }
+    }
+  }
+  .more-button {
+    position: relative;
+    margin: 80px auto 0px;
+    background-color: transparent;
+    color: $MediumSlateBlue;
+    font-size: $text-base16;
+    padding: 1.25rem 1.75rem;
+    border-radius: 8px;
+    border: 2px solid $MediumSlateBlue;
+    cursor: pointer;
+  }
+  .more-button::before {
+    @include hover-btn;
+  }
+  .more-button:hover:before {
+    background-color: $lightest-navy;
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.active[data-aos="fade-down"] {
+  transition-delay: 200ms;
+}

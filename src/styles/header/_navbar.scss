@@ -1,0 +1,73 @@
+@import "../mixins/mixin";
+header {
+  .nav {
+    font-weight: $fw700;
+    font-size: $text-sm14;
+    height: 90px;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    right: 0;
+    left: 0;
+    box-shadow: 0 2px 0px 3px rgba(0, 0, 0, 0.1);
+    background-color: $navy;
+    z-index: 11;
+    transition: all 0.4s;
+    .nav-icon {
+      a {
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+    .nav-ol {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        li {
+          span {
+            color: $MediumSlateBlue;
+            padding-right: 7px;
+          }
+          padding: 0 20px;
+          a {
+            color: $slate;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $MediumSlateBlue;
+          }
+        }
+        li:last-child {
+          padding-right: 35px;
+        }
+      }
+    }
+    .btn-flip {
+      a {
+        position: relative;
+        border: 2px solid $MediumSlateBlue;
+        border-radius: 5px;
+        padding: 10px 10px;
+        color: $MediumSlateBlue;
+        text-decoration: none;
+        background-position: 0% 0%;
+        background-image: linear-gradient(to bottom, $navy);
+      }
+      a::before {
+        @include hover-btn;
+      }
+      a:hover::before {
+        background-color: $lightest-navy;
+        width: 100%;
+      }
+    }
+  }
+}

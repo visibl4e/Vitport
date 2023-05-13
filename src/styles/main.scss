@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap");
+@import "./fonts-colors/allColors";
+@import "./fonts-colors/allFonts";
+@import "./body";
+@import "./header/navbar";
+@import "./header/side-orientationLeft";
+@import "./header/side-orientationRight";
+@import "./main/_hero-StyledHeroSection.scss";
+@import "./main/about-StyledAboutSection";
+@import "./main/progects-StyledProgectsSection";
+@import "./main/project-StyledTabPanel";
+@import "./mixins/mixin";
+@import "./main/goals-cards/goals-route";
+@import "./main/archive-StyledArchiveSection";
+@import "./main/mail-StyledMailSection";
+@import "./loader/loader";
+@import url("https://unpkg.com/aos@2.3.1/dist/aos.css");

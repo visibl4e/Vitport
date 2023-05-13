@@ -1,0 +1,117 @@
+.goals-StyledGoalsSection {
+  margin: 0 auto;
+  padding: 100px 0;
+  max-width: 900px;
+  margin-bottom: 100px;
+  .numbered-goals {
+    color: $lightSlate;
+    font-size: $text-3xl30;
+    margin: 10px 0 40px;
+    display: flex;
+    align-items: center;
+  }
+  .numbered-goals::before {
+    position: relative;
+    counter-increment: section 3;
+    content: "0" counter(section) ".";
+    margin-right: 10px;
+    color: $MediumSlateBlue;
+    font-size: $text-2xl24;
+    font-weight: $fw700;
+  }
+  .numbered-goals::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: $lightest-navy;
+  }
+  .goals-route {
+    .svg-container {
+      position: relative;
+      .position1 {
+        position: absolute;
+        top: 10px;
+      }
+      .position2 {
+        position: absolute;
+        top: 450px;
+        left: 100px;
+      }
+      .position3 {
+        position: absolute;
+        left: 50px;
+        top: 900px;
+      }
+    }
+    .text-goals {
+      z-index: 2;
+      width: 500px;
+      text-align: center;
+      color: $slate;
+      position: relative;
+      background-color: $lightest-navy;
+      border-radius: 10px;
+      padding: 30px;
+      overflow: hidden;
+      h3 {
+        font-size: $text-lg18;
+        color: $lightSlate;
+        margin-bottom: 20px;
+        span {
+          color: $MediumSlateBlue;
+          font-size: $text-lg18;
+          font-weight: $fw700;
+        }
+      }
+
+      p {
+        font-weight: $fw500;
+        line-height: 1.5;
+        span {
+          color: $MediumSlateBlue;
+        }
+      }
+    }
+
+    .text-goals::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      left: -50%;
+      top: -50%;
+      width: 200%;
+      height: 200%;
+      background-color: #b7a7ff;
+      background-repeat: no-repeat;
+      background-size: 50% 50%, 50% 50%;
+      background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+      background-image: linear-gradient(#2e00ff, #917af9);
+      -webkit-animation: rotate 6s linear infinite;
+      animation: rotate 6s linear infinite;
+    }
+    .text-goals::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 6px;
+      top: 6px;
+      width: calc(100% - 12px);
+      height: calc(100% - 12px);
+      background: $lightest-navy;
+      border-radius: 5px;
+    }
+    @-webkit-keyframes rotate {
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+    @keyframes rotate {
+      100% {
+        transform: rotate(1turn);
+      }
+    }
+  }
+}

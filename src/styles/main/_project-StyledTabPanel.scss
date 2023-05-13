@@ -1,0 +1,41 @@
+.progects-StyledTabPanels {
+  position: relative;
+  width: 100%;
+
+  .progect-introduction {
+    h3 {
+      color: $lightSlate;
+      line-height: 1.5;
+      font-weight: $fw700;
+      font-size: $text-xl20;
+      margin-bottom: 5px;
+    }
+    .range {
+      color: $slate;
+      font-weight: $fw500;
+      margin-bottom: 15px;
+      font-size: $text-sm14;
+    }
+    ul {
+      list-style: none;
+      li {
+        display: flex;
+        justify-content: start;
+        margin-bottom: 15px;
+        margin-left: 15px;
+        color: $slate;
+        font-weight: $fw500;
+        font-size: $text-base16;
+      }
+      li::before {
+        content: "▹";
+        margin-right: 10px;
+        left: 0px;
+        color: #7fffd4;
+        font-size: 18px;
+        margin-top: 2px;
+        line-height: 12px;
+      }
+    }
+  }
+}

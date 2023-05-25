@@ -60,7 +60,7 @@ function preloader() {
   window.addEventListener("load", function () {
     setTimeout(() => {
       loader.style.display = "none";
-    }, 0);
+    }, 4000);
   });
 }
 preloader();

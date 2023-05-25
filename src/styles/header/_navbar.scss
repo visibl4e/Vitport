@@ -15,7 +15,9 @@ header {
     background-color: $navy;
     z-index: 11;
     transition: all 0.4s;
+
     .nav-icon {
+      z-index: -4;
       a {
         img {
           width: 70px;
@@ -67,6 +69,300 @@ header {
       a:hover::before {
         background-color: $lightest-navy;
         width: 100%;
+      }
+    }
+    // blur effect
+  }
+}
+
+// media response design
+
+@media (max-width: 768px) {
+  .nav-ol {
+    ul {
+      visibility: hidden;
+    }
+  }
+  .btn-flip {
+    display: none;
+  }
+  .nav {
+    padding: 0px 50px;
+
+    .container {
+      display: block;
+
+      // btn animation
+      .nav-dropMenu {
+        display: block;
+        .menu {
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+          transition: 0.5s ease;
+          height: 50px;
+          &:hover .bar {
+            box-shadow: 1px 1px 7px 1px RGBa(0, 0, 0, 0.3);
+          }
+          .bar {
+            width: 50px;
+            height: 10px;
+            background: $MediumSlateBlue;
+            box-shadow: 1px 1px 3px RGBa(0, 0, 0, 0.4);
+            border-radius: 2px;
+            transition: 0.4s ease;
+            &:not(:first-child) {
+              margin-top: 10px;
+            }
+          }
+        }
+
+        #hi:checked + .menu {
+          transform: translate(-50%, -50%) rotatey(180deg);
+          .bar {
+            transform: rotatey(180deg) rotatex(360deg);
+            &:first-child {
+              transform: rotate(-45deg);
+              margin-top: 20px;
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              margin-top: -30px;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  // aside nav animation for mobiles
+
+  .menu-StyledSideBar {
+    display: none;
+    padding: 50px 10px;
+    justify-content: center;
+    align-items: center;
+    width: min(75vw, 400);
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    outline: 0px;
+    background-color: $lightest-navy;
+
+    z-index: -2;
+    box-shadow: -10px 0px 30px -15px $lightest-navy;
+    // @include mobile-asideNav;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      ul {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        list-style-type: none;
+        li {
+          margin: 20px;
+          span {
+            color: $MediumSlateBlue;
+          }
+          padding: 0 20px;
+          a {
+            color: $slate;
+            text-decoration: none;
+          }
+          a:hover {
+            color: $MediumSlateBlue;
+          }
+        }
+      }
+      .btn-sideMobile {
+        margin-top: 25px;
+        a {
+          position: relative;
+          border: 2px solid $MediumSlateBlue;
+          border-radius: 5px;
+          padding: 10px 10px;
+          color: $MediumSlateBlue;
+          text-decoration: none;
+          background-position: 0% 0%;
+          background-image: linear-gradient(to bottom, $navy);
+        }
+        a::before {
+          @include hover-btn;
+        }
+        a:hover::before {
+          background-color: $lightest-navy;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  header {
+    .nav {
+      padding-left: 25px;
+      padding-right: 25px;
+      .container {
+        display: flex;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        .menu-StyledSideBar {
+          display: none;
+          padding: 50px 10px;
+          justify-content: center;
+          align-items: center;
+          width: min(65vw);
+          height: 100vh;
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          outline: 0px;
+          background-color: $lightest-navy;
+
+          z-index: -2;
+          box-shadow: -10px 0px 30px -15px $lightest-navy;
+          // @include mobile-asideNav;
+
+          nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            ul {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              list-style-type: none;
+              li {
+                margin: 20px;
+                span {
+                  color: $MediumSlateBlue;
+                }
+                padding: 0 20px;
+                a {
+                  color: $slate;
+                  text-decoration: none;
+                }
+                a:hover {
+                  color: $MediumSlateBlue;
+                }
+              }
+            }
+            .btn-sideMobile {
+              margin-top: 25px;
+              a {
+                position: relative;
+                border: 2px solid $MediumSlateBlue;
+                border-radius: 5px;
+                padding: 10px 10px;
+                color: $MediumSlateBlue;
+                text-decoration: none;
+                background-position: 0% 0%;
+                background-image: linear-gradient(to bottom, $navy);
+              }
+              a::before {
+                @include hover-btn;
+              }
+              a:hover::before {
+                background-color: $lightest-navy;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  header {
+    .nav {
+      padding-left: 25px;
+      padding-right: 25px;
+      .container {
+        display: flex;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        .menu-StyledSideBar {
+          display: none;
+          padding: 50px 10px;
+          justify-content: center;
+          align-items: center;
+          width: min(60vw);
+          height: 100vh;
+          position: fixed;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          outline: 0px;
+          background-color: $lightest-navy;
+
+          z-index: -2;
+          box-shadow: -10px 0px 30px -15px $lightest-navy;
+          // @include mobile-asideNav;
+
+          nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            ul {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              list-style-type: none;
+              li {
+                margin: 20px;
+                span {
+                  color: $MediumSlateBlue;
+                }
+                padding: 0 20px;
+                a {
+                  color: $slate;
+                  text-decoration: none;
+                }
+                a:hover {
+                  color: $MediumSlateBlue;
+                }
+              }
+            }
+            .btn-sideMobile {
+              margin-top: 25px;
+              a {
+                position: relative;
+                border: 2px solid $MediumSlateBlue;
+                border-radius: 5px;
+                padding: 10px 10px;
+                color: $MediumSlateBlue;
+                text-decoration: none;
+                background-position: 0% 0%;
+                background-image: linear-gradient(to bottom, $navy);
+              }
+              a::before {
+                @include hover-btn;
+              }
+              a:hover::before {
+                background-color: $lightest-navy;
+                width: 100%;
+              }
+            }
+          }
+        }
       }
     }
   }

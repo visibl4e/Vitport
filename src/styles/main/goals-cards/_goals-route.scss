@@ -2,11 +2,12 @@
   margin: 0 auto;
   padding: 100px 0;
   max-width: 900px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   .numbered-goals {
     color: $lightSlate;
     font-size: $text-3xl30;
     margin: 10px 0 40px;
+    font-size: clamp(26px, 5vw, $text-3xl30);
     display: flex;
     align-items: center;
   }
@@ -29,21 +30,14 @@
     background-color: $lightest-navy;
   }
   .goals-route {
-    .svg-container {
+    .goals-container {
       position: relative;
-      .position1 {
-        position: absolute;
-        top: 10px;
-      }
-      .position2 {
-        position: absolute;
-        top: 450px;
-        left: 100px;
-      }
-      .position3 {
-        position: absolute;
-        left: 50px;
-        top: 900px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .text-goals {
+        margin-bottom: 60px;
       }
     }
     .text-goals {
@@ -111,6 +105,46 @@
     @keyframes rotate {
       100% {
         transform: rotate(1turn);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .goals-StyledGoalsSection {
+    padding: 0px 30px;
+    .svg-container {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .goals-StyledGoalsSection {
+    padding: 0px 20px;
+    margin-bottom: 100px;
+    .numbered-goals::after {
+      display: none;
+    }
+    .goals-route {
+      .goals-container {
+        .text-goals {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .goals-StyledGoalsSection {
+    padding: 0px 20px;
+    margin-bottom: 100px;
+    .goals-route {
+      .goals-container {
+        .text-goals {
+          width: 200px;
+        }
       }
     }
   }

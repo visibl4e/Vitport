@@ -64,3 +64,21 @@ function preloader() {
   });
 }
 preloader();
+
+// media js
+function navBtnMobile() {
+  const navDropMenuBtn = document.querySelector(".menu");
+  const menuStyledSideBar = document.querySelector(".menu-StyledSideBar");
+
+  navDropMenuBtn.addEventListener("click", () => {
+    if (menuStyledSideBar.style.display == "flex") {
+      menuStyledSideBar.style.display = "none";
+      // menuStyledSideBar.style.transform = "translateX(-200vw)";
+    } else {
+      console.log("worked1");
+      menuStyledSideBar.style.display = "flex";
+      // menuStyledSideBar.style.transform = "translateX(0vw)";
+    }
+  });
+}
+navBtnMobile();

@@ -21,6 +21,7 @@
     font-size: $text-5xl56;
     color: $lightSlate;
     margin-bottom: 30px;
+    font-size: clamp(40px, 8vw, 80px);
   }
   p {
     color: $slate;
@@ -64,5 +65,44 @@
   a:hover {
     color: $MediumSlateBlue;
     transition: all 0.25s;
+  }
+}
+
+@media (max-width: 768px) {
+  .mail-StyledMailSection {
+    padding: 0px 60px;
+    margin-top: 70px;
+  }
+}
+.credit-StyledFooter {
+  .links-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ul {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        padding: 15px;
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: $slate;
+        }
+
+        svg:hover {
+          fill: $MediumSlateBlue;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .mail-StyledMailSection {
+    padding: 0px 20px;
   }
 }

@@ -1,0 +1,41 @@
+.content {
+  .pages-StyledMainContainer {
+    padding: 0px 150px;
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    .pages-StyledMainContainer {
+      padding: 0px;
+      padding-top: 50px;
+
+      z-index: 99;
+      max-width: 450px;
+    }
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .content {
+    .pages-StyledMainContainer {
+      padding: 0px 30px;
+      padding-top: 50px;
+      z-index: 99;
+      max-width: 708px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1080px) {
+  .content {
+    .pages-StyledMainContainer {
+      padding: 0px 60px;
+      padding-top: 50px;
+
+      z-index: 99;
+      max-width: 960px;
+    }
+  }
+}

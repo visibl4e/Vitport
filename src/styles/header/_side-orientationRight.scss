@@ -33,3 +33,17 @@
   margin: 20px auto;
   background-color: $slate;
 }
+
+// media response design
+
+@media (max-width: 768px) {
+  .side-slidebar__right {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .side-slidebar__right {
+    display: none;
+  }
+}

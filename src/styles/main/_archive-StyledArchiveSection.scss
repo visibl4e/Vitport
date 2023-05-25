@@ -19,7 +19,7 @@
     padding: 0px;
     margin: 50px 0px 0px;
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
 
     // position: relative;
@@ -145,4 +145,19 @@
 
 .active[data-aos="fade-down"] {
   transition-delay: 200ms;
+}
+
+@media (max-width: 768px) {
+  .archive-StyledArchiveSection {
+    padding: 0px 30px;
+    flex-wrap: wrap;
+    .archive-grid {
+      list-style: none;
+      padding: 0px;
+      margin: 50px 0px 0px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+  }
 }

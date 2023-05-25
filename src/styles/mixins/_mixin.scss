@@ -50,3 +50,32 @@
   z-index: -3;
   transition: 0.23s;
 }
+
+@mixin mobile-asideNav {
+  ul {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    flex-direction: column;
+    width: 100%;
+    li {
+      background-color: #2e00ff;
+      span {
+        color: $MediumSlateBlue;
+        padding-right: 7px;
+      }
+      padding: 0 20px;
+      a {
+        color: $slate;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $MediumSlateBlue;
+      }
+    }
+    li:last-child {
+      padding-right: 35px;
+    }
+  }
+}

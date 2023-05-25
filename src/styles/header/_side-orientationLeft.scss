@@ -36,3 +36,17 @@
     background-color: $slate;
   }
 }
+
+// media response design
+
+@media (max-width: 768px) {
+  .side-slidebar__left {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) {
+  .side-slidebar__left {
+    display: none;
+  }
+}

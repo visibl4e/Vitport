@@ -8,6 +8,7 @@
     position: relative;
     color: $lightSlate;
     font-size: $text-3xl30;
+    font-size: clamp(26px, 5vw, $text-3xl30);
     width: 100%;
     margin: 10px 0px 40px;
   }
@@ -55,39 +56,84 @@
         background-color: #113f67;
         transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
       }
-      button::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 10;
-        width: 2px;
-        height: $tabHieght;
-      }
+      // button::before {
+      //   content: "";
+      //   display: block;
+      //   position: absolute;
+      //   top: 0px;
+      //   left: 0px;
+      //   z-index: 10;
+      //   width: 2px;
+      //   height: $tabHieght;
+      // }
     }
-    .progects-StyledTabPanels-buttons::before {
-      content: "";
-      display: block;
-      height: 220px;
-      background-color: $slate;
-      position: absolute;
-      width: 1px;
-    }
+    // .progects-StyledTabPanels-buttons::before {
+    //   content: "";
+    //   display: block;
+    //   height: 220px;
+    //   background-color: $slate;
+    //   position: absolute;
+    //   width: 1px;
+    // }
     .progects-StyledTabPanels {
       width: 100%;
     }
   }
 }
-.progects-StyledHighLight[data-marker] {
-  position: absolute;
-  top: 0px;
-  left: -0.5px;
-  z-index: 10;
-  width: 2px;
-  height: 45px;
-  border-radius: 4px;
-  background: $MediumSlateBlue;
-  transform: translateY(calc(1 * 45px));
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+// .progects-StyledHighLight[data-marker] {
+//   position: absolute;
+//   top: 0px;
+//   left: -0.5px;
+//   z-index: 10;
+//   width: 2px;
+//   height: 45px;
+//   border-radius: 4px;
+//   background: $MediumSlateBlue;
+//   transform: translateY(calc(1 * 45px));
+//   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+// }
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .projects-StyledProgectsSection {
+    padding: 0px 20px;
+    margin-bottom: 100px;
+    .numbered-heading::after {
+      width: 250px;
+    }
+    .inner {
+      display: flex;
+      gap: 40px;
+      .progects-StyledTabPanels-buttons {
+        button {
+          padding: 0;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .projects-StyledProgectsSection {
+    padding: 0px 20px;
+    padding-bottom: 80px;
+    .numbered-heading::after {
+      display: none;
+    }
+    .inner {
+      display: block;
+      .progects-StyledTabPanels-buttons {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        button:hover {
+          border-bottom: 2px solid $MediumSlateBlue;
+        }
+      }
+    }
+  }
 }
